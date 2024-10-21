@@ -5,46 +5,39 @@ using UnityEngine;
 public class TestPlayer3D : MonoBehaviour
 {
     public float speed;
-    public float jumpForce;
+    public float maxSpeed;
 
-    [Space(15)]
-    public float CheckDistance;
-    public Transform GroundCheck;
-    public LayerMask GroundMask;
+    private Rigidbody rb;
 
-    [Space(15)]
-    public Transform PlayerMesh;
+    void Start()
+    {
+        Rigidbody rb = GetComponent<Rigidbody>();
 
-    [Space(15)]
-    public bool canJump;
-    public bool canMove;
-
+    }
     void FixedUpdate()
     {
         Cursor.lockState = CursorLockMode.Locked;
 
-        Rigidbody rb = GetComponent<Rigidbody>();
+        float x = Input.GetAxisRaw("Horizontal");
+        float z = Input.GetAxisRaw("Vertical");
 
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
-        Vector3 forward = Camera.main.transform.forward;
-        Vector3 right = Camera.main.transform.right;
-
-        forward.y = 0;
-        right.y = 0;
-
-        forward.Normalize();
-        right.Normalize();
-
-        Vector3 MoveDirection = forward * verticalInput + right * horizontalInput;
-
-        rb.velocity = new Vector3(MoveDirection.x * speed, rb.velocity.y, MoveDirection.z * speed);
-
-        if (MoveDirection != new Vector3(0, 0, 0))
+        if (Input.GetKey("w"))
         {
-            PlayerMesh.rotation = Quaternion.LookRotation(MoveDirection);
-
+            var move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            transform.position += move * speed * Time.deltaTime;
+        }
+        if (Input.GetKey("s"))
+        {
+            var move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            transform.position += move * speed * Time.deltaTime;
+        }
+        if (Input.GetKey("d"))
+        {
+            transform.Translate(Vector3.right * Time.deltaTime * 1.6f, Camera.main.transform);
+        }
+        if (Input.GetKey("a"))
+        {
+            transform.Translate(Vector3.left * Time.deltaTime * 1.6f, Camera.main.transform);
         }
     }
 }

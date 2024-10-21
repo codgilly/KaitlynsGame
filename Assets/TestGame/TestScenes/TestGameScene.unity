@@ -618,6 +618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 905559040}
+  - component: {fileID: 905559041}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -642,6 +643,20 @@ Transform:
   - {fileID: 1566698184}
   m_Father: {fileID: 325873633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &905559041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 905559039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4da4f731e93b74a9f62b1ffe3a2ced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1566698186}
+  enemy: {fileID: 1092438661}
 --- !u!1 &909043989
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,7 +879,7 @@ GameObject:
   - component: {fileID: 1092438662}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1014,7 +1029,7 @@ GameObject:
   - component: {fileID: 1294452162}
   m_Layer: 0
   m_Name: EnemyGameObject
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1244,15 +1259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 2
-  CheckDistance: 0
-  GroundCheck: {fileID: 948848238}
-  GroundMask:
-    serializedVersion: 2
-    m_Bits: 8
-  PlayerMesh: {fileID: 325873633}
-  canJump: 0
-  canMove: 1
+  maxSpeed: 0
 --- !u!54 &1581560369
 Rigidbody:
   m_ObjectHideFlags: 0
