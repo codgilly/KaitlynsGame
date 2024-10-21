@@ -16,20 +16,20 @@ public class TestPlayer3D : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+       // Cursor.lockState = CursorLockMode.Locked;
 
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKey("w"))
-        {
-            var move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            transform.position += move * speed * Time.deltaTime;
-        }
         if (Input.GetKey("s"))
         {
             var move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            transform.position += move * speed * Time.deltaTime;
+            transform.position -= move * speed * Time.deltaTime;
+        }
+        if (Input.GetKey("w"))
+        {
+            var move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            transform.position -= move * speed * Time.deltaTime;
         }
         if (Input.GetKey("d"))
         {

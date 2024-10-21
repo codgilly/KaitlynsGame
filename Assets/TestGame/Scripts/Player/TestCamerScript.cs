@@ -24,7 +24,7 @@ public class TestCamerScript : MonoBehaviour
 
         playerPos = playerObject.transform.position.z;
 
-        position = new Vector3(0, 3, playerPos + 8.25f);
+        position = new Vector3(0, 5, playerPos + 8.25f);
 
         // Vector3 cameraPosition = new Vector3(playerPos, position);
 
