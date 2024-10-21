@@ -26,7 +26,6 @@ public class TestCamerScript : MonoBehaviour
 
         position = new Vector3(0, 3, playerPos + 8.25f);
 
-
         // Vector3 cameraPosition = new Vector3(playerPos, position);
 
         camera.transform.localPosition = position;
