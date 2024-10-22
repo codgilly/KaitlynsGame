@@ -5,6 +5,23 @@ using UnityEngine;
 public class TestSwordScript : MonoBehaviour
 {
 
+    public bool swinging;
+
+    void Start()
+    {
+        swinging = false;
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Swinging();
+            Invoke("SwingingF", 2.5f);
+            
+        }
+    }
+
     /*this is basiclly if the sword with collide with any gameObject it will detect it
      so with this we are detecting what is being colideded with it, so with this it will detect the enemy
      if it collides with the enemy then in the console it will print ("hit")
@@ -21,7 +38,7 @@ public class TestSwordScript : MonoBehaviour
     */
     void OnTriggerEnter(Collider col)
     {
-        if (col.CompareTag("Enemy"))
+        if (col.CompareTag("Enemy") && swinging == true)
         {
             print("hit");
         }
@@ -32,5 +49,14 @@ public class TestSwordScript : MonoBehaviour
             player.stunned
         }
          */
+    }
+
+    public void Swinging()
+    {
+        swinging = true;
+    }
+    public void SwingingF()
+    {
+        swinging = false;
     }
 }
