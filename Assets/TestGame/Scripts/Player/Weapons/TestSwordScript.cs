@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class TestSwordScript : MonoBehaviour
 {
-
+    Animator anim;
+    public GameObject sword;
     public bool swinging;
 
     void Start()
     {
+        sword.tag = ("nonAttacking");
+        anim = GetComponent<Animator>();
         swinging = false;
     }
 
@@ -16,10 +19,10 @@ public class TestSwordScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Swinging();
-            Invoke("SwingingF", 2.5f);
-            
+            gameObject.GetComponent<Animator>().enabled = true;
+            anim.Play("SwordAnim");
         }
+
     }
 
     /*this is basiclly if the sword with collide with any gameObject it will detect it
@@ -53,10 +56,17 @@ public class TestSwordScript : MonoBehaviour
 
     public void Swinging()
     {
+        sword.tag = ("Sword");
         swinging = true;
     }
     public void SwingingF()
     {
-        swinging = false;
+        sword.tag = ("nonAttacking");
+
+    }
+    public void StopAttacking()
+    {
+        gameObject.GetComponent<Animator>().enabled = false;
+
     }
 }

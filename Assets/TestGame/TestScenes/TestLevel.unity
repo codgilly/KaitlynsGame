@@ -1265,6 +1265,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 104837324232400890, guid: 32204d39337551443b2889c7574ff1ea, type: 3}
+      propertyPath: sword
+      value: 
+      objectReference: {fileID: 829208025}
+    - target: {fileID: 5881905179825343306, guid: 32204d39337551443b2889c7574ff1ea, type: 3}
+      propertyPath: m_TagString
+      value: Sword
+      objectReference: {fileID: 0}
     - target: {fileID: 6907699346087849517, guid: 32204d39337551443b2889c7574ff1ea, type: 3}
       propertyPath: pHealth
       value: 
@@ -3184,6 +3192,7 @@ GameObject:
   - component: {fileID: 2067312774}
   - component: {fileID: 2067312776}
   - component: {fileID: 2067312775}
+  - component: {fileID: 2067312777}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -3218,10 +3227,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.46
-  m_Speed: 5
-  m_Acceleration: 8
+  m_Speed: 4
+  m_Acceleration: 8.6
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 120.39
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -3257,6 +3266,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 36
   m_CollisionDetection: 0
+--- !u!114 &2067312777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067312773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b604d73fe6f563c499907e495a61d374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eHealth: 5
 --- !u!1 &2112162907
 GameObject:
   m_ObjectHideFlags: 0
